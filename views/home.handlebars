@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pj.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Produtos</h1>
+    <ul>
+        {{#each produtos}}
+        <li>{{nome}} - R$ {{preco}}</li>
+        {{/each}}
+    </ul>
+</body>
+</html>
+
+// C de Create
+
+router.post("/", (req, res) => {
+    const { nome, preco } = req.body;
+
+    const produto = {
+        id: id++,
+        nome,
+        preco
+    };
+
+    produtos.push(produto);
+    res.status(201).json(produto);
+});
+
+// R de Read
+
+router.get("/", (req, res) => {
+    res.json(produtos);
+});
+
+// U de Update
+router.put("/:id", (req, res) => {
+
+    const produto = produtos.find(p => p.id == req.params.id);
+
+    if (!produto) {
+        return res.status(404).json({ mensagem: "Produto não encontrado." });
+    }
+
+    produto.nome = req.body.nome;
+    produto.preco = req.body.preco;
+
+    res.json(produto);
+});
+
+//D de Delete
+router.delete("/:id", (req, res) => {
+
+    produtos = produtos.filter(p => p.id != req.params.id);
+
+    res.json({ mensagem: "Produto removido com sucesso." });
+});
+
+module.exports = router;
+
+</body>
+</html>
