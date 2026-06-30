@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>Listar estudantes</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <h1>WATERCOLOR</h1>
+
+    <div class="menu">
+        <a href="/estudantes/create">Cadastrar-se</a>
+    </div>
+
+    <h4>Arthur Gabriel Da Silva, Jhonathan Leonardo, Thiago Batista</h4>
+
+    <ul>
+
+        {{#each estudantes}}
+
+        <li>
+            <span>{{nome}} - {{email}}</span>
+
+            <div class="acoes">
+
+                <a href="/estudantes/{{id}}/edit" class="btn-editar">
+                    Editar
+                </a>
+
+                <form action="/estudantes/delete" method="POST">
+                    <input type="hidden" name="id" value="{{id}}">
+                    <button type="submit" class="btn-excluir">
+                        Excluir
+                    </button>
+                </form>
+
+            </div>
+
+        </li>
+
+        {{/each}}
+
+    </ul>
+
+</body>
+</html>

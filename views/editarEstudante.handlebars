@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Editar estudante</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Editar estudante</h1>
+    <form action="/estudantes/update" method="POST">
+    <input type="hidden" name="id" value="{{estudante.id}}">
+        <label for="ipnNome">Nome</label>
+        <input type="text" name="nome" id="ipnNome" value="{{estudante.nome}}" required>
+        <br>
+        <label for="ipnEmail">Email</label>
+        <input
+        type="email"
+        name="email"
+        id="ipnEmail"
+        value="{{estudante.email}}"
+        required>
+        <br>
+        <label for="ipnSenha">Senha</label>
+        <input
+        type="password"
+        name="senha"
+        id="ipnSenha"
+        value="{{estudante.senha}}"
+        required>
+
+    <input type="submit" value="Salvar">
+    </form>
+</body>
+</html>
