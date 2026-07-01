@@ -30,6 +30,10 @@ app.set('view engine', 'handlebars');
 app.get('/login', (req, res) => {
   res.render('loginEscolha');
 });
+
+app.get("/servidor/create", (req,res) =>{
+  res.render('cadastrarServidores')
+});
 //-----------------------------------------------------------------
 //-----------------------------------------------------------------
 //-----------------------------------------------------------------
@@ -47,10 +51,6 @@ app.get('/estudantes/create', (req, res) => {
   res.render('cadastrarEstudante');
 });
 
-app.get('/servidores/create', (req, res) => {
-  res.render('cadastrarServidores');
-});
-
 //create
 app.post('/estudantes', async (req, res) => {
   console.log(req.body);
@@ -63,7 +63,7 @@ app.post('/estudantes', async (req, res) => {
     senha,
   });
 
-  res.redirect('/');
+  res.redirect('/estudantes');
 });
 
 //inicio de update
