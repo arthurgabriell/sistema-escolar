@@ -1,22 +1,27 @@
-<html>
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <title>Cadastrar Estudante</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cadastrar estudante | Sistema Escolar</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <h1>Cadastrar Estudante!</h1>
-<form class="form-cadastro" action="/estudantes" method="post">
-    <label for="ipnNome"> Nome </label>
-    <input type="text" name="nome" id="ipnNome" required> 
-    <br>
-    <label for="ipnEmail">Email</label>
-    <input type="email" name="email" id="ipnEmail" required>
-    <br>
-    <label for="ipnSenha">Senha</label>
-    <input type="password" name="senha" id="ipnSenha" required>
-    <br>
-    <input type="submit" value="Salvar">
-    </form>
+    <main class="cadastro-estudante">
+        <h1>Cadastrar estudante</h1>
+        <form class="form-cadastro" action="/estudantes" method="post">
+            <label for="ipnNome">Nome</label>
+            <input type="text" name="nome" id="ipnNome" autocomplete="name" required>
+
+            <label for="ipnEmail">Email</label>
+            <input type="email" name="email" id="ipnEmail" autocomplete="email" required>
+
+            <label for="ipnSenha">Senha</label>
+            <input type="password" name="senha" id="ipnSenha" autocomplete="new-password" required>
+
+            <input type="submit" value="Salvar">
+        </form>
+    </main>
 </body>
 </html>
 

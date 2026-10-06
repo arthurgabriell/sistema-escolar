@@ -116,7 +116,7 @@ app.post('/estudantes/update', async (req, res) => {
 
   await estudanteEditar.save();
 
-  res.redirect('/');
+  res.redirect('/estudantes');
 });
 
 app.post('/estudantes/delete', async (req, res) => {
@@ -128,7 +128,7 @@ app.post('/estudantes/delete', async (req, res) => {
     },
   });
 
-  res.redirect('/');
+  res.redirect('/estudantes');
 });
 
 app.listen(3000, () => {
